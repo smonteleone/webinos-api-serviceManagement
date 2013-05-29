@@ -26,6 +26,7 @@
     ServiceManagementModule.prototype.bindService = function (bindCB, serviceId) {
         this.register = register;
         this.unregister = unregister;
+        this.listRegisteredServices = listRegisteredServices;
 
         if (typeof bindCB.onBind === 'function') {
             bindCB.onBind(this);
@@ -46,6 +47,18 @@
     
     function unregister(id, successCB, errorCB) {
         var rpc = webinos.rpcHandler.createRPC(this, "unregister", [id]);
+        webinos.rpcHandler.executeRPC(rpc
+            , function (params) {
+                successCB(params);
+            }
+            , function (error) {
+                errorCB(error);
+            }
+        );
+    };
+    
+    function listRegisteredServices(successCB, errorCB) {
+        var rpc = webinos.rpcHandler.createRPC(this, "listRegisteredServices", []);
         webinos.rpcHandler.executeRPC(rpc
             , function (params) {
                 successCB(params);
