@@ -1,0 +1,30 @@
+{
+    "name": "servicemanagement"
+,   "publishConfig": { "tag": "alpha" }
+,   "description": "Service Management API"
+,   "keywords": [ "webinos", "service", "management", "API"]
+,   "version": "0.0.1"
+,   "homepage": "http://developer.webinos.org/"
+,   "bugs" : "http://jira.webinos.org"
+,   "author": "Salvatore Monteleone <salvatore.monteleone@dieei.unict.it>"
+,   "repository":{
+        "type": "git"
+    ,   "url": "http://github.com/webinos/Webinos-Platform"
+    }
+,   "bugs":{
+        "email": "webinos-wp4-ml@fokus.fraunhofer.de"
+        , "url": ""
+    }
+,   "directories": {
+        "doc": "./doc"
+    ,   "lib": "./lib"
+    ,   "test": "./test"
+    }
+,   "main": "./lib/webinos.rpc.servicemanagement.js"
+,   "dependencies": {
+    }
+,   "bundleDependencies":[
+        "fs"
+    ,   "path"
+    ]
+}
